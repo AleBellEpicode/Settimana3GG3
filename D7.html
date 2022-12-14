@@ -185,13 +185,54 @@
          La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
       */
 
-      const generateTable = function () {};
+      const generateTable = () => {
+        const tablepos = document.getElementById("tableArea");
+        const table = document.createElement("table");
+        tablepos.appendChild(table);
+        let row1 = table.insertRow(0);
+        const cell1 = row1.insertCell(0);
+        const cell2 = row1.insertCell(1);
+        const cell3 = row1.insertCell(2);
+        const cell4 = row1.insertCell(3);
+        cell1.innerText = "immagine";
+        cell2.innerText = "nome prodotto";
+        cell3.innerText = "quantita";
+        cell4.innerText = "prezzo";
+        table.style.borderWidth = "1px";
+        table.style.borderColor = "black";
+        table.style.borderStyle = "solid";
+        cell1.style.borderWidth = "1px";
+        cell1.style.borderColor = "black";
+        cell1.style.borderStyle = "solid";
+        cell2.style.borderWidth = "1px";
+        cell2.style.borderColor = "black";
+        cell2.style.borderStyle = "solid";
+        cell3.style.borderWidth = "1px";
+        cell3.style.borderColor = "black";
+        cell3.style.borderStyle = "solid";
+        cell4.style.borderWidth = "1px";
+        cell4.style.borderColor = "black";
+        cell4.style.borderStyle = "solid";
+      };
 
       /* ESERCIZIO 12
          Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
       */
 
-      const addRow = function () {};
+      const addRow = () => {
+        const tablepos = document.getElementById("tableArea");
+        const newrow = document.createElement("row");
+        tablepos.appendChild(newrow);
+        let row1 = newrow.insertRow(1);
+        const cell1 = row1.insertCell(0);
+        const cell2 = row1.insertCell(1);
+        const cell3 = row1.insertCell(2);
+        const cell4 = row1.insertCell(3);
+        cell1.innerText = "immagine";
+        cell2.innerText = "nome prodotto";
+        cell3.innerText = "quantita";
+        cell4.innerText = "prezzo";
+      };
 
       /* ESERCIZIO 14
         Crea una funzione che nasconda le immagini della tabella quando eseguita
