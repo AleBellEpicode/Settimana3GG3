@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      body div,
+      footer {
+        padding: 1rem;
+      }
+
+      footer {
+        padding: 1rem;
+        background-color: black;
+        color: white;
+      }
+
+      .myHeading {
+        color: #ff00d6;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="firstdiv">
+      <h1>Questo è il titolo della pagina</h1>
+      <h2>Questo è il sottotitolo della pagina</h2>
+    </div>
+
+    <div>
+      <hr />
+
+      <ul id="firstList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <ul id="secondList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <a class="bodylink" href="https://epicode.com/it/"
+        >Questo link porta al sito di Epicode</a
+      >
+
+      <div class="divclass">
+        <p>Questo testo è un placeholder per gli esercizi</p>
+      </div>
+    </div>
+
+    <div class="divclass">
+      <p>Anche questo testo è per gli esercizi</p>
+      <h2 id="changeMyColor" style="color: #ff00d6">
+        Apri questa pagina con VSCode per scoprire gli esercizi
+      </h2>
+    </div>
+
+    <div id="tableArea"></div>
+
+    <footer>
+      <h3>
+        DOM Manipulation is super
+        <a
+          revealFooterLinkid="footerlink"
+          href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents"
+          >AWESOME!</a
+        >
+      </h3>
+    </footer>
+    <script>
+      /* ESERCIZIO 1
+         Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
+      */
+
+      const changeTitle = (nuovoTitolo) => {
+        const title = document.querySelector("h1");
+        title.innerText = nuovoTitolo;
+      };
+
+      /* ESERCIZIO 2
+         Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
+      */
+
+      const addClassToTitle = () => {
+        const titleh1 = document.querySelector("h1");
+        titleh1.classList.add("myHeading");
+      };
+
+      /* ESERCIZIO 3
+         Scrivi una funzione per che cambi il testo dei p figli di un div
+        */
+
+      const changePcontent = (newText) => {
+        const pInDivs = document.querySelectorAll("div");
+        const arrayPInDivs = Array.from(pInDivs);
+        for (i = 0; i < arrayPInDivs.length; i++) {
+          const allP = document.querySelectorAll("p");
+          const arrayAllP = Array.from(allP);
+          arrayAllP.forEach((p) => (p.innerText = newText));
+        }
+      };
+      /* ESERCIZIO 4
+         Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
+        */
+
+      const changeUrls = () => {
+        const alteredLinks = document.getElementsByClassName("bodylink");
+        const arrayLinks = Array.from(alteredLinks);
+        arrayLinks.forEach((a) => (a.href = "https://www.google.com/"));
+      };
+      /* ESERCIZIO 5
+         Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
+      */
+
+      const addToTheSecond = () => {
+        const newlistElement = document.createElement("li");
+        const secondli = document.getElementById("secondList");
+        secondli.appendChild(newlistElement);
+      };
+
+      /* ESERCIZIO 6
+         Scrivi una funzione che aggiunga un secondo paragrafo al primo div
+      */
+
+      const addParagraph = () => {
+        const newp = document.createElement("p");
+        const divone = document.getElementById("firstdiv");
+        divone.appendChild(newp);
+      };
+
+      /* ESERCIZIO 7
+         Scrivi una funzione che faccia scomparire la prima lista non ordinata
+      */
+
+      const hideFirstUl = () => {
+        const firstul = document.getElementById("firstList");
+        firstul.remove();
+      };
+
+      /* ESERCIZIO 8
+         Scrivi una funzione che renda verde il background di ogni lista non ordinata
+        */
+
+      const paintItGreen = () => {
+        const changebackg = document.getElementsByTagName("ul");
+        changebackg[0].style.background = "green";
+        changebackg[1].style.background = "green";
+      };
+
+      /* ESERCIZIO 9
+         Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
+        */
+
+      const makeItClickable = () => {};
+
+      /* ESERCIZIO 10
+         Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
+        */
+
+      const revealFooterLink = () => {
+        const footerL = document.getElementById("footerlink");
+      };
+
+      /* ESERCIZIO 11
+         Crea una funzione che crei una tabella nell'elemento con id "tableArea".
+         La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
+      */
+
+      const generateTable = function () {};
+
+      /* ESERCIZIO 12
+         Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
+      */
+
+      const addRow = function () {};
+
+      /* ESERCIZIO 14
+        Crea una funzione che nasconda le immagini della tabella quando eseguita
+      */
+
+      const hideAllImages = function () {};
+
+      /* EXTRA ESERCIZIO 15
+        Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
+      */
+
+      const changeColorWithRandom = function () {};
+
+      /* EXTRA ESERCIZIO 16
+        Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
+      */
+
+      const deleteVowels = function () {};
+    </script>
+  </body>
+</html>
