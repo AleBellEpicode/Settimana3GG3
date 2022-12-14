@@ -72,11 +72,10 @@
 
     <div id="tableArea"></div>
 
-    <footer>
+    <footer onclick="revealFooterLinkid()">
       <h3>
         DOM Manipulation is super
         <a
-          revealFooterLinkid="footerlink"
           href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents"
           >AWESOME!</a
         >
@@ -166,14 +165,19 @@
          Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
         */
 
-      const makeItClickable = () => {};
+      const makeItClickable = () => {
+        const h1 = document.getElementsByTagName("h1")[0];
+        h1.innerText = h1.textContent.slice(0, -1);
+      };
 
       /* ESERCIZIO 10
          Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
         */
 
       const revealFooterLink = () => {
-        const footerL = document.getElementById("footerlink");
+        alert(
+          "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents"
+        );
       };
 
       /* ESERCIZIO 11
